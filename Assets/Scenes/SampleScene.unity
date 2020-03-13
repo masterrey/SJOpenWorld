@@ -6223,9 +6223,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
+      propertyPath: projectilesPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
       propertyPath: spherePrefab
       value: 
       objectReference: {fileID: 1524654630831800, guid: faed0b893436c7e409349f70f319613e,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: e8effd43566d3de48ae171d68fbec4fc,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 975c8db9c8ab3fa408f270f8c2534f90, type: 3}

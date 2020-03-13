@@ -15,37 +15,14 @@ public class FpsWalk : MonoBehaviour
    
     void Update()
     {
-        //float ang = transform.rotation.eulerAngles.y;
-       
-        
-        if (Input.GetKey(KeyCode.W))
-        {
-            //move = new Vector3(Mathf.Sin( ang*Mathf.Deg2Rad),
-            //0, Mathf.Cos(ang * Mathf.Deg2Rad));
-            move=transform.forward;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            //move = new Vector3(0, 0, -1);
-            move = -transform.forward;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            move = transform.right;
-
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            move = -transform.right;
-
-        }
-
+        //criacao de vetor de movimento local
+        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //captura de rotacao do corpo
         rot.y = Input.GetAxis("Mouse X");
-
-
-        chtr.SimpleMove(move);
+        //conversao de direcao local pra global 
+        Vector3 globalmove = transform.TransformDirection(move);
+        chtr.SimpleMove(globalmove * 5);
         transform.Rotate(rot);
-        move = Vector3.zero;
-        rot = Vector3.zero;
+       
     }
 }

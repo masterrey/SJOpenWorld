@@ -6224,7 +6224,7 @@ PrefabInstance:
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
       propertyPath: projectilesPrefab.Array.size
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
@@ -6241,6 +6241,42 @@ PrefabInstance:
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
       propertyPath: projectilesPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: 356c623ac29608a44a3d62dff474e5b5,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: b507f762b6851ad4db704727b81078fb,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[6]
+      value: 
+      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+        type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: projectilesPrefab.Array.data[7]
       value: 
       objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
         type: 3}

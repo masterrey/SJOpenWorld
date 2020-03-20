@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3076110161118753509}
   - component: {fileID: -3962849839350584256}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: BombInplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 55e70bce0d26efb4a916a3dfbcf376cf, type: 2}
+  - {fileID: 2100000, guid: ab6c766af05803c4195c87839bb4d24f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b469df4d1b7bb44db43dc81e22eade3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombForce: 2000
+  bombForce: -2000

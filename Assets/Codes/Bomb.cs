@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
+
+    public float bombForce=1000;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,8 @@ public class Bomb : MonoBehaviour
         {
             foreach(RaycastHit hit in hits)
             {
-                hit.rigidbody.AddExplosionForce(1000, transform.position, 10);
+                if(hit.rigidbody)
+                hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
             }
         }
     }

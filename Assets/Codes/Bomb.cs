@@ -23,8 +23,11 @@ public class Bomb : MonoBehaviour
         {
             foreach(RaycastHit hit in hits)
             {
-                if(hit.rigidbody)
-                hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                if (hit.rigidbody)
+                {
+                    hit.rigidbody.isKinematic = false;
+                    hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                }
             }
         }
     }

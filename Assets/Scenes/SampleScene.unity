@@ -1312,6 +1312,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3a30058d7c317b499aa53ba75e8639c, type: 3}
+--- !u!1 &293950232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293950233}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &293950233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293950232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.417046, y: -8.006174, z: 16.145584}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1990254243}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &294006248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4739,6 +4769,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1163054596}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1469090566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654779751391312, guid: 21bd98e95dc922347ae6446c1decac44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1240418302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1493482847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4705275285025232, guid: 9b286c7bdc0f30645811cc2abb2c3b19,
@@ -5745,6 +5781,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 388188642}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1990254243 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 789680417127977425, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+    type: 3}
+  m_PrefabInstance: {fileID: 789680417809104037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2006029477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6166,6 +6208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFPS
       objectReference: {fileID: 0}
+    - target: {fileID: 789680416008456433, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 789680416008456445, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6260,26 +6307,36 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilesPrefab.Array.data[4]
       value: 
-      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+      objectReference: {fileID: 3076110161118753512, guid: cf971f208141d864da8ce83d2989d7a9,
         type: 3}
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
       propertyPath: projectilesPrefab.Array.data[5]
       value: 
-      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+      objectReference: {fileID: 3076110161118753512, guid: 110e9c6f8804b504c8d4e875aa6dea94,
         type: 3}
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
       propertyPath: projectilesPrefab.Array.data[6]
       value: 
-      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+      objectReference: {fileID: 3076110161118753512, guid: f4fa880a3502bda4aa0c108fe7c4eca9,
         type: 3}
     - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
         type: 3}
       propertyPath: projectilesPrefab.Array.data[7]
       value: 
-      objectReference: {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe,
+      objectReference: {fileID: 7732151162437081733, guid: 6f8bd019e1f99334ab5a87b478c3011c,
         type: 3}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1469090566}
+    - target: {fileID: 8280225994257835668, guid: 975c8db9c8ab3fa408f270f8c2534f90,
+        type: 3}
+      propertyPath: laserpoint
+      value: 
+      objectReference: {fileID: 293950232}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 975c8db9c8ab3fa408f270f8c2534f90, type: 3}
 --- !u!1001 &1238218284392553247

@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class guidedBomb : MonoBehaviour
+public class Detection : MonoBehaviour
 {
-    public GameObject target;
-
     Rigidbody rdb;
-    public float bombForce = 1000;
+    public float bombForce =2000;
+
     // Start is called before the first frame update
     void Start()
     {
         rdb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        transform.LookAt(target.transform);
-        rdb.AddForce(transform.forward*50);
+        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("bati");
+        rdb.isKinematic = true;
+    }
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 1)
-        {
-            Explode();
-        }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(rdb.isKinematic)
+        Explode();
     }
 
 

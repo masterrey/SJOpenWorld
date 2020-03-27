@@ -27,6 +27,10 @@ public class guidedBomb : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
         print("bati");
         Explode();
     }

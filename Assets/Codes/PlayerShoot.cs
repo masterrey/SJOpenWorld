@@ -27,8 +27,7 @@ public class PlayerShoot : MonoBehaviour
         {
             //instancia o objeto e guarda a referencia
             GameObject myprojectile=
-            Instantiate(projectilesPrefab[indexWeapon], transform.position+transform.forward,
-            Quaternion.identity);
+            Instantiate(projectilesPrefab[indexWeapon], transform.position+transform.forward,transform.rotation);
 
             if (myprojectile.GetComponent<guidedBomb>())
             {

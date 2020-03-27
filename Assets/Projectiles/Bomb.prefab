@@ -123,3 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombForce: 2000
+  fxPrefab: {fileID: 1451592278842746329, guid: 53cbff6136a051c4584e62fe4de3394f,
+    type: 3}

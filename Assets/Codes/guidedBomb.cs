@@ -5,7 +5,7 @@ using UnityEngine;
 public class guidedBomb : MonoBehaviour
 {
     public GameObject target;
-
+    public GameObject fxPrefab;
     Rigidbody rdb;
     public float bombForce = 1000;
     // Start is called before the first frame update
@@ -25,11 +25,17 @@ public class guidedBomb : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("bati");
+        Explode();
+    }
 
 
     void Explode()
     {
         print("Boom!");
+        Instantiate(fxPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
         RaycastHit[] hits;
         hits = Physics.SphereCastAll(transform.position, 5, Vector3.up, 10);

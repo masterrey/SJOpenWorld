@@ -45,6 +45,10 @@ public class PlayerShoot : MonoBehaviour
         {
             laserpoint.transform.position = hit.point;
         }
+        else
+        {
+            laserpoint.transform.position = transform.position + transform.forward * 100;
+        }
 
     }
 

@@ -8,7 +8,17 @@ public class IAStarFPS : MonoBehaviour
     public GameObject target;
     public NavMeshAgent agent;
     public Animator anim;
-  
+    public SkinnedMeshRenderer render;
+    public enum States
+    {
+        pursuit,
+        atacking,
+        stoped,
+        dead,
+        damage,
+    }
+
+    public States state;
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +29,97 @@ public class IAStarFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-            agent.destination = target.transform.position;
-            anim.SetFloat("Velocidade", agent.velocity.magnitude);
+        StateMachine();
+        anim.SetFloat("Velocidade", agent.velocity.magnitude);
 
-       
     }
 
-    public void PauseIA(float seconds)
+    void StateMachine()
     {
-        agent.isStopped = true; 
-        Invoke("UnpauseIA", seconds);
+        switch (state)
+        {
+            case States.pursuit:
+                PursuitState();
+                break;
+            case States.atacking:
+                AttackState();
+                break;
+            case States.stoped:
+                StoppedState();
+                break;
+            case States.dead:
+                DeadState();
+                break;
+            case States.damage:
+                DamageState();
+                break;
+        }
     }
-    void UnpauseIA()
+
+    void ReturnPursuit()
     {
-        agent.isStopped = false; 
+        state = States.pursuit;
+       
+    }
+    public void Damage()
+    {
+        state = States.damage;
+        Invoke("ReturnPursuit", 1);
+        render.material.EnableKeyword("_EMISSION");
+        Invoke("ReturnDamage", 0.5f);
+    }
+    void ReturnDamage()
+    {
+        render.material.DisableKeyword("_EMISSION");
+    }
+
+    public void Dead()
+    {
+        state = States.dead;
+    }
+
+
+    void PursuitState()
+    {
+        agent.isStopped = false;
+        agent.destination = target.transform.position;
+        anim.SetBool("Attack", false);
+        anim.SetBool("Damage", false);
+        if (Vector3.Distance(transform.position, target.transform.position) < 3)
+        {
+            state = States.atacking;
+        }
+    }
+
+    void AttackState()
+    {
+        agent.isStopped = true;
+        anim.SetBool("Attack", true);
+        anim.SetBool("Damage", false);
+        if (Vector3.Distance(transform.position, target.transform.position) > 4)
+        {
+            state = States.pursuit;
+        }
+    }
+
+    void StoppedState()
+    {
+        agent.isStopped = true;
+        anim.SetBool("Attack", false);
+        anim.SetBool("Damage", false);
+    }
+
+    void DeadState()
+    {
+        agent.isStopped = true;
+        anim.SetBool("Attack", false);
+        anim.SetBool("Dead", true);
+        anim.SetBool("Damage", false);
+    }
+
+    void DamageState()
+    {
+        agent.isStopped = true;
+        anim.SetBool("Damage", true);
     }
 }

@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 4525058858297531442}
   m_Layer: 2
   m_Name: GuidedBomb
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 582912259946870546}
   m_Layer: 0
   m_Name: detectionbomb
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e7c47c36c90544698ef7c9b0b4879a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombForce: 2000

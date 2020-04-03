@@ -65,12 +65,18 @@ public class IAStarFPS : MonoBehaviour
     {
         state = States.damage;
         Invoke("ReturnPursuit", 1);
-        render.material.EnableKeyword("_EMISSION");
-        Invoke("ReturnDamage", 0.5f);
+        StartCoroutine(ReturnDamage());
     }
-    void ReturnDamage()
+    IEnumerator ReturnDamage()
     {
-        render.material.DisableKeyword("_EMISSION");
+        for (int i = 0; i < 10; i++)
+        {
+            render.material.EnableKeyword("_EMISSION");
+            yield return new WaitForSeconds(0.05f);
+            render.material.DisableKeyword("_EMISSION");
+            yield return new WaitForSeconds(0.05f);
+        }
+
     }
 
     public void Dead()

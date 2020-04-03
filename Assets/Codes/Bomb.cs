@@ -29,6 +29,7 @@ public class Bomb : MonoBehaviour
                 {
                     hit.rigidbody.isKinematic = false;
                     hit.rigidbody.AddExplosionForce(bombForce, transform.position, 10);
+                    hit.collider.SendMessage("ExplosionDamage",SendMessageOptions.DontRequireReceiver);
                 }
             }
         }

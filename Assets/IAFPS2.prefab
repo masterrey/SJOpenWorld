@@ -72,6 +72,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: -2481053125270181927}
+  anim: {fileID: 2392105176948319875}
+  state: 0
 --- !u!54 &2147066797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,6 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 10
+  anim: {fileID: 2392105176948319875}
+  iastar: {fileID: 1551346184}
 --- !u!1001 &2392105177298963324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +179,12 @@ PrefabInstance:
 --- !u!4 &2392105176948319612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 388476416, guid: 7df524699deb44341b3693c8538df185,
+    type: 3}
+  m_PrefabInstance: {fileID: 2392105177298963324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2392105176948319875 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 388476415, guid: 7df524699deb44341b3693c8538df185,
     type: 3}
   m_PrefabInstance: {fileID: 2392105177298963324}
   m_PrefabAsset: {fileID: 0}

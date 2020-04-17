@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &293950232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293950233}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &293950233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293950232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.417046, y: -8.006174, z: 16.145584}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 789680417127977425}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789680416008456433
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,9 +43,10 @@ GameObject:
   - component: {fileID: 789680416008456435}
   - component: {fileID: 789680416008456432}
   - component: {fileID: 789680416008456444}
+  - component: {fileID: 2144580693}
   m_Layer: 0
   m_Name: PlayerFPS
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +144,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2144580693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789680416008456433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3a93f67ade3e54a8ceb57ca28445ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chtr: {fileID: 789680416008456444}
 --- !u!1 &789680417127977428
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +186,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.691, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 293950233}
   m_Father: {fileID: 789680416008456445}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -209,5 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b73c196180bb624db46fa92abe7efff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spherePrefab: {fileID: 3076110161118753512, guid: e8effd43566d3de48ae171d68fbec4fc,
-    type: 3}
+  projectilesPrefab:
+  - {fileID: 3076110161118753512, guid: e8effd43566d3de48ae171d68fbec4fc, type: 3}
+  - {fileID: 3076110161118753512, guid: ce6ef4f0f488daa46ab35f042a2204fe, type: 3}
+  - {fileID: 3076110161118753512, guid: 356c623ac29608a44a3d62dff474e5b5, type: 3}
+  - {fileID: 3076110161118753512, guid: b507f762b6851ad4db704727b81078fb, type: 3}
+  - {fileID: 3076110161118753512, guid: cf971f208141d864da8ce83d2989d7a9, type: 3}
+  - {fileID: 3076110161118753512, guid: 110e9c6f8804b504c8d4e875aa6dea94, type: 3}
+  - {fileID: 3076110161118753512, guid: f4fa880a3502bda4aa0c108fe7c4eca9, type: 3}
+  - {fileID: 7732151162437081733, guid: 6f8bd019e1f99334ab5a87b478c3011c, type: 3}
+  target: {fileID: 0}
+  laserpoint: {fileID: 293950232}

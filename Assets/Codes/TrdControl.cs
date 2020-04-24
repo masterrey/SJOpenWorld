@@ -10,6 +10,7 @@ public class TrdControl : MonoBehaviour
     Animator anim;
     public float forcemove=1000;
     GameObject dummyCam;
+    public AudioSource scream;
     public enum States
     {
         Walk,
@@ -25,7 +26,7 @@ public class TrdControl : MonoBehaviour
     {
         rdb= GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-
+        /*
 
         Joint[] joints;
         joints = GetComponentsInChildren<Joint>();
@@ -40,8 +41,9 @@ public class TrdControl : MonoBehaviour
         {
             Destroy(rdbs[i]);
         }
+        */
         rdb.isKinematic=false;
-
+        
         StartCoroutine(Idle());
     }
 
@@ -122,9 +124,9 @@ public class TrdControl : MonoBehaviour
     {
         //entrada
         anim.SetTrigger("Atack");
-
+        scream.Play();
         yield return new WaitForSeconds(2);
-
+        
         ChangeState(States.Idle);
         //saida
     }

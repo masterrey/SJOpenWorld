@@ -69,7 +69,7 @@ public class IAStarFPS : MonoBehaviour
     }
     IEnumerator ReturnDamage()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
             render.material.EnableKeyword("_EMISSION");
             yield return new WaitForSeconds(0.05f);

@@ -3102,6 +3102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IAFPS2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2341452322090143513, guid: 65c9400e747142149ac903ff63f5db6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c9400e747142149ac903ff63f5db6c, type: 3}
 --- !u!1001 &382315872
@@ -5253,6 +5258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forcemove: 20000
+  state: 2
 --- !u!1 &698238715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5935,6 +5941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IAFPS2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2341452322090143513, guid: 65c9400e747142149ac903ff63f5db6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2392105177536583339, guid: 65c9400e747142149ac903ff63f5db6c,
         type: 3}
@@ -7563,7 +7574,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286093632}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1286093635
 Camera:
   m_ObjectHideFlags: 0

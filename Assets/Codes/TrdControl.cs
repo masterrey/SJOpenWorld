@@ -10,8 +10,17 @@ public class TrdControl : MonoBehaviour
     Animator anim;
     public float forcemove=1000;
     GameObject dummyCam;
+    public enum States
+    {
+        Walk,
+        Attack,
+        Idle,
+        Dead,
+        Damage,
+    }
 
-   
+    public States state;
+
     void Start()
     {
         rdb= GetComponent<Rigidbody>();
@@ -32,6 +41,8 @@ public class TrdControl : MonoBehaviour
             Destroy(rdbs[i]);
         }
         rdb.isKinematic=false;
+
+        StartCoroutine(Idle());
     }
 
     public void SetDummyCam(GameObject dummy)
@@ -52,7 +63,13 @@ public class TrdControl : MonoBehaviour
         {
             transform.forward = Vector3.Slerp(transform.forward,move,Time.deltaTime*10);
         }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            ChangeState(States.Attack);
+        }
     }
+
 
     private void FixedUpdate()
     {
@@ -63,4 +80,74 @@ public class TrdControl : MonoBehaviour
         anim.SetFloat("Velocity", vel);
     }
 
+    public void ChangeState(States myestate)
+    {
+        state = myestate;
+        StartCoroutine(state.ToString());
+    }
+
+    IEnumerator Idle()
+    {
+        //entrada
+        while (state == States.Idle)
+        {
+            //loop
+            yield return new WaitForFixedUpdate();
+
+            if (rdb.velocity.magnitude > 0.1f)
+            {
+                ChangeState(States.Walk);
+            }
+        }
+        //saida
+    }
+
+    IEnumerator Walk()
+    {
+        //entrada
+        
+        while (state == States.Walk)
+        {
+            //loop
+            yield return new WaitForFixedUpdate();
+            if (rdb.velocity.magnitude < 0.1f)
+            {
+                ChangeState(States.Idle);
+            }
+        }
+        //saida
+    }
+
+    IEnumerator Attack()
+    {
+        //entrada
+        anim.SetTrigger("Atack");
+
+        yield return new WaitForSeconds(2);
+
+        ChangeState(States.Idle);
+        //saida
+    }
+
+    IEnumerator Damage()
+    {
+        //entrada
+        while (state == States.Damage)
+        {
+            //loop
+            yield return new WaitForFixedUpdate();
+        }
+        //saida
+    }
+
+    IEnumerator Dead()
+    {
+        //entrada
+        while (state == States.Dead)
+        {
+            //loop
+            yield return new WaitForFixedUpdate();
+        }
+        //saida
+    }
 }

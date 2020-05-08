@@ -10,7 +10,10 @@ public class TrdControl : MonoBehaviour
     Animator anim;
     public float forcemove=1000;
     GameObject dummyCam;
+    public float drag=4;
     public AudioSource scream;
+    public float jumpForce =500;
+    float timeJump = 1;
     public enum States
     {
         Walk,
@@ -18,6 +21,7 @@ public class TrdControl : MonoBehaviour
         Idle,
         Dead,
         Damage,
+        Jump,
     }
 
     public States state;
@@ -70,6 +74,17 @@ public class TrdControl : MonoBehaviour
         {
             ChangeState(States.Attack);
         }
+        if (Input.GetButtonDown("Jump"))
+        {
+            ChangeState(States.Jump);
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+           if(timeJump > 0.1f)
+            {
+                timeJump = 0.1f;
+            }
+        }
     }
 
 
@@ -78,8 +93,20 @@ public class TrdControl : MonoBehaviour
 
         float vel = rdb.velocity.magnitude;
 
+        //limite de velocidade
         rdb.AddForce((move * forcemove)/ (vel*2+1));
         anim.SetFloat("Velocity", vel);
+
+        //velocidade sem y
+        Vector3 velwoy = new Vector3(rdb.velocity.x, 0, rdb.velocity.z);
+        //drag manual
+        rdb.AddForce(-velwoy * drag);
+
+        if(Physics.Raycast(transform.position+Vector3.up*.5f,Vector3.down,out RaycastHit hit, 511))
+        {
+            anim.SetFloat("DistGround", hit.distance);
+            Debug.DrawLine(transform.position + Vector3.up*.5f, hit.point,Color.red);
+        }
     }
 
     public void ChangeState(States myestate)
@@ -149,6 +176,24 @@ public class TrdControl : MonoBehaviour
         {
             //loop
             yield return new WaitForFixedUpdate();
+        }
+        //saida
+    }
+    IEnumerator Jump()
+    {
+        timeJump = .4f;
+        //entrada
+        while (state == States.Jump)
+        {
+            yield return new WaitForFixedUpdate();
+            //loop
+            rdb.AddForce(Vector3.up* jumpForce* timeJump);
+            timeJump -= Time.fixedDeltaTime;
+            if (timeJump <= 0)
+            {
+                ChangeState(States.Idle);
+            }
+            
         }
         //saida
     }

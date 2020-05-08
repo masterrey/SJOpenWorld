@@ -119,6 +119,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 10
   iastar: {fileID: 1551346184}
+--- !u!65 &1636793439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2392105177536583339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.018114, y: 85.03, z: 23.633902}
+  m_Center: {x: 0, y: 57.2, z: 51.8}
 --- !u!1001 &2392105177298963324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,6 +204,12 @@ Animator:
 --- !u!137 &2392105178790751495 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1769399931, guid: 7df524699deb44341b3693c8538df185,
+    type: 3}
+  m_PrefabInstance: {fileID: 2392105177298963324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2392105177536583339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 842522071, guid: 7df524699deb44341b3693c8538df185,
     type: 3}
   m_PrefabInstance: {fileID: 2392105177298963324}
   m_PrefabAsset: {fileID: 0}

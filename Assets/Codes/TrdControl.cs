@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ public class TrdControl : MonoBehaviour
     public AudioSource scream;
     public float jumpForce =500;
     float timeJump = 1;
+    float ikforce = 0;
+    bool grab = false;
+    FixedJoint grabjoint;
     public enum States
     {
         Walk,
@@ -85,6 +89,7 @@ public class TrdControl : MonoBehaviour
                 timeJump = 0.1f;
             }
         }
+        grab = Input.GetButton("Fire3");
     }
 
 
@@ -107,12 +112,44 @@ public class TrdControl : MonoBehaviour
             anim.SetFloat("DistGround", hit.distance);
             Debug.DrawLine(transform.position + Vector3.up*.5f, hit.point,Color.red);
         }
+        if (!grab)
+        {
+            ikforce = Mathf.Lerp(ikforce, 0, Time.fixedDeltaTime*3);
+        }
     }
 
     public void ChangeState(States myestate)
     {
         state = myestate;
         StartCoroutine(state.ToString());
+    }
+    public void Grab()
+    {
+        if (grab)
+        {
+            if (Physics.Raycast(transform.position + Vector3.up, transform.forward, out RaycastHit hit, 2, 511))
+            {
+                if (hit.collider.CompareTag("Push"))
+                {
+                    ikforce = Mathf.Lerp(ikforce, 1, Time.fixedDeltaTime * 3);
+
+                }
+                if (ikforce > 0.9f)
+                {
+                    if (!grabjoint)
+                    {
+                        grabjoint = hit.collider.gameObject.AddComponent<FixedJoint>();
+                        grabjoint.connectedBody = rdb;
+                    }
+                }   
+            }
+        }
+        else { 
+            if (grabjoint)
+            {
+                Destroy(grabjoint);
+            }
+        }
     }
 
     IEnumerator Idle()
@@ -127,6 +164,7 @@ public class TrdControl : MonoBehaviour
             {
                 ChangeState(States.Walk);
             }
+            Grab();
         }
         //saida
     }
@@ -143,6 +181,8 @@ public class TrdControl : MonoBehaviour
             {
                 ChangeState(States.Idle);
             }
+            Grab();
+
         }
         //saida
     }
@@ -196,5 +236,19 @@ public class TrdControl : MonoBehaviour
             
         }
         //saida
+    }
+
+    void OnAnimatorIK(int layerIndex)
+    {
+        
+
+        anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, ikforce);
+        anim.SetIKPositionWeight(AvatarIKGoal.RightHand, ikforce);
+        anim.SetIKPosition(AvatarIKGoal.LeftHand, transform.position + Vector3.up + transform.forward - transform.right * 0.5f);
+        anim.SetIKPosition(AvatarIKGoal.RightHand, transform.position + Vector3.up + transform.forward + transform.right * 0.5f);
+
+        anim.SetIKRotationWeight(AvatarIKGoal.RightHand, ikforce);
+        anim.SetIKRotation(AvatarIKGoal.RightHand, Quaternion.Euler(-40, 131, 301));//124 307 301
+
     }
 }

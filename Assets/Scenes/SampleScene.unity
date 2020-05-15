@@ -2250,25 +2250,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 567ac14ff96d8f340a4612119589096d, type: 3}
---- !u!1 &234236333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4570786380056540846, guid: 251eb8a247c6ff6438561641e12e3b89,
-    type: 3}
-  m_PrefabInstance: {fileID: 1527523207}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &234236334
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234236333}
-  m_Material: {fileID: 13400000, guid: a22f0c851af96fb49bc514612256e955, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.12
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &237149571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7490,18 +7471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4568980973947510277, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980974247508050, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
     - target: {fileID: 4568980974282011942, guid: 251eb8a247c6ff6438561641e12e3b89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7562,60 +7531,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior boy
       objectReference: {fileID: 0}
-    - target: {fileID: 4568980974414523779, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980974437754876, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980974491212563, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980975065367089, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980975180326067, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980975281965031, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980975484454571, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980975698802259, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
-    - target: {fileID: 4568980976007845993, guid: 251eb8a247c6ff6438561641e12e3b89,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 2af7053742f0ca646ad84ce9bd0dc8a3,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251eb8a247c6ff6438561641e12e3b89, type: 3}
 --- !u!1 &1527523209 stripped
@@ -9417,25 +9332,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c3c543415a6a343afbf5b5197e29df, type: 3}
---- !u!1 &1922213502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4569938572066595562, guid: 251eb8a247c6ff6438561641e12e3b89,
-    type: 3}
-  m_PrefabInstance: {fileID: 1527523207}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &1922213503
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922213502}
-  m_Material: {fileID: 13400000, guid: a22f0c851af96fb49bc514612256e955, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.12
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1927863104
 PrefabInstance:
   m_ObjectHideFlags: 0

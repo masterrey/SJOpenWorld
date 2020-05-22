@@ -18,6 +18,7 @@ public class TrdControl : MonoBehaviour
     float ikforce = 0;
     bool grab = false;
     FixedJoint grabjoint;
+    public GameObject projetil;
     public enum States
     {
         Walk,
@@ -26,6 +27,7 @@ public class TrdControl : MonoBehaviour
         Dead,
         Damage,
         Jump,
+        Spell,
     }
 
     public States state;
@@ -69,7 +71,7 @@ public class TrdControl : MonoBehaviour
         if (dummyCam)
             move = dummyCam.transform.TransformDirection(move);
 
-        if (move.magnitude > 0)
+        if (move.magnitude > 0 && !grab)
         {
             transform.forward = Vector3.Slerp(transform.forward,move,Time.deltaTime*10);
         }
@@ -77,6 +79,10 @@ public class TrdControl : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ChangeState(States.Attack);
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            ChangeState(States.Spell);
         }
         if (Input.GetButtonDown("Jump"))
         {
@@ -132,7 +138,6 @@ public class TrdControl : MonoBehaviour
                 if (hit.collider.CompareTag("Push"))
                 {
                     ikforce = Mathf.Lerp(ikforce, 1, Time.fixedDeltaTime * 3);
-
                 }
                 if (ikforce > 0.9f)
                 {
@@ -194,6 +199,22 @@ public class TrdControl : MonoBehaviour
         scream.Play();
         yield return new WaitForSeconds(2);
         
+        ChangeState(States.Idle);
+        //saida
+    }
+
+    IEnumerator Spell()
+    {
+        //entrada
+        anim.SetTrigger("Spell");
+        scream.Play();
+        yield return new WaitForSeconds(0.7f);
+        GameObject magic = Instantiate(projetil, transform.position + Vector3.up+transform.forward, transform.rotation);
+        magic.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(1);
+       
+
         ChangeState(States.Idle);
         //saida
     }

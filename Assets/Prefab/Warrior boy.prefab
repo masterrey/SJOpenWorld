@@ -5009,7 +5009,7 @@ GameObject:
   - component: {fileID: 1527523215}
   m_Layer: 8
   m_Name: Warrior boy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5097,6 +5097,8 @@ MonoBehaviour:
   drag: 100
   scream: {fileID: 1527523215}
   jumpForce: 10000
+  projetil: {fileID: 3076110161118753512, guid: 051802963d3077847bcaec206e3a0680,
+    type: 3}
   state: 2
 --- !u!82 &1527523215
 AudioSource:
@@ -5701,7 +5703,7 @@ GameObject:
   - component: {fileID: 4568980975065367089}
   m_Layer: 8
   m_Name: Bip01 Pelvis
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

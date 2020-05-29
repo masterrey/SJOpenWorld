@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class TrdControl : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -53,6 +53,13 @@ public class TrdControl : MonoBehaviour
         }
         */
         rdb.isKinematic=false;
+        if (SceneManager.GetActiveScene().name == "MainGame")
+        {
+            if (CommomValues.ShrinePlayerPosition.magnitude > 0)
+            {
+                transform.position = CommomValues.ShrinePlayerPosition;
+            }
+        }
         
         StartCoroutine(Idle());
     }

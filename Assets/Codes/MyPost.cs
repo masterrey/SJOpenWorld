@@ -13,7 +13,6 @@ public class MyPost : MonoBehaviour
         
     }
 
-
     private void Start()
     {
         postmaterial.SetColor("_Color", Color.black);

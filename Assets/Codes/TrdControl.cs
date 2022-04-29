@@ -15,6 +15,7 @@ public class TrdControl : MonoBehaviour
     public AudioSource scream;
     public float jumpForce =500;
     float timeJump = 1;
+    bool canJump = true;
     float ikforce = 0;
     bool grab = false;
     FixedJoint grabjoint;
@@ -91,13 +92,14 @@ public class TrdControl : MonoBehaviour
         {
             ChangeState(States.Spell);
         }
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump")&&canJump)
         {
             ChangeState(States.Jump);
         }
         if (Input.GetButtonUp("Jump"))
         {
-           if(timeJump > 0.1f)
+           
+           if (timeJump > 0.1f)
             {
                 timeJump = 0.1f;
             }
@@ -123,6 +125,9 @@ public class TrdControl : MonoBehaviour
         if(Physics.Raycast(transform.position+Vector3.up*.5f,Vector3.down,out RaycastHit hit, 511))
         {
             anim.SetFloat("DistGround", hit.distance);
+            if (hit.distance < 0.5f) {
+                canJump = true;
+            }
             Debug.DrawLine(transform.position + Vector3.up*.5f, hit.point,Color.red);
         }
         if (!grab)
@@ -250,6 +255,7 @@ public class TrdControl : MonoBehaviour
     IEnumerator Jump()
     {
         timeJump = .4f;
+        canJump = false;
         //entrada
         while (state == States.Jump)
         {

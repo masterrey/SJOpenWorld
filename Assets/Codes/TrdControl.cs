@@ -81,7 +81,8 @@ public class TrdControl : MonoBehaviour
 
         if (move.magnitude > 0 && !grab)
         {
-            transform.forward = Vector3.Slerp(transform.forward,move,Time.deltaTime*10);
+            move=new Vector3(move.x,0,move.z).normalized;
+            transform.forward = move;
         }
 
         if (Input.GetButtonDown("Fire1"))

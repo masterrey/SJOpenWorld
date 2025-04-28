@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class DayCicle : MonoBehaviour
 {
-    public float daytime; //passagem de tempo
+    public double daytime; //passagem de tempo
+    public double hoursToStart = 12; //hora que começa o level
+    //variaveis para o tempo do dia
     float lightdegrees = 0;
     public float timeScale = 1;
     public TimeSpan mytime;
@@ -20,13 +22,24 @@ public class DayCicle : MonoBehaviour
     public MorningCall myMorningCall;
     public NightCall myNightCall;
 
+    public bool getCurrentTime;
+
     public string timespan;
     bool day = false;
     void Start()
     {
         //guarda a cor do fog
         fogcolor = RenderSettings.fogColor;
-        daytime = CommomValues.currenttime;
+        if (getCurrentTime)
+        {
+            
+            daytime = (System.DateTime.Now.Hour * 3600 + System.DateTime.Now.Minute * 60 + System.DateTime.Now.Second);
+        }
+        else
+        {
+            daytime = hoursToStart * 3600; //coloca o tempo do dia na hora que começa o level
+        }
+
     }
 
     void Update()
@@ -38,10 +51,10 @@ public class DayCicle : MonoBehaviour
         mytime = TimeSpan.FromSeconds(daytime);
         timespan=mytime.ToString();
 
-        CommomValues.currenttime = daytime;
+        CommomValues.currenttime = (float)daytime;
 
         //coloca o sol no lugar apropriado para o dia regra de 3 86400segundo para um dia por 360 graus pra um dia
-        lightdegrees = 360 * (daytime/ 86400);
+        lightdegrees =(float) (360 * (daytime/ 86400));
         //aplica os graus na rotaçao da luz
         transform.rotation = Quaternion.Euler(lightdegrees -90, -45, -19);
         //calcula o produto vetorial da direçao da luz pra descobrir sua intensidade

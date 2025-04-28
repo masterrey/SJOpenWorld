@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shrine02.unity
     guid: e1e14891450627141b5850c0225aaa4f
+  - enabled: 1
+    path: Assets/Scenes/MainGametest.unity
+    guid: 853c0fced34a4534eabd11efd976035a
   m_configObjects: {}

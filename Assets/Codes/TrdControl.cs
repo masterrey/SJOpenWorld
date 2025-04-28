@@ -38,22 +38,9 @@ public class TrdControl : MonoBehaviour
     {
         rdb= GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        /*
 
-        Joint[] joints;
-        joints = GetComponentsInChildren<Joint>();
-        foreach (Joint myjoint in joints)
-        {
-            Destroy(myjoint);
-        }
+        Cursor.lockState = CursorLockMode.Locked;
 
-        Rigidbody[] rdbs;
-        rdbs = GetComponentsInChildren<Rigidbody>();
-        for(int i=1;i<rdbs.Length;i++)
-        {
-            Destroy(rdbs[i]);
-        }
-        */
         rdb.isKinematic=false;
         if (SceneManager.GetActiveScene().name == "MainGame")
         {
@@ -62,7 +49,7 @@ public class TrdControl : MonoBehaviour
                 transform.position = CommomValues.ShrinePlayerPosition;
             }
         }
-        
+
         StartCoroutine(Idle());
     }
 
